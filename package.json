@@ -1,21 +1,31 @@
 {
   "name": "masque-needle-svelte-template",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "check": "svelte-check --tsconfig ./tsconfig.json && tsc -p tsconfig.node.json"
+    "start": "vite --host",
+    "build:dev": "vite build",
+    "build:production": "vite build -- --production",
+    "gltf:transform": "npm run transform --prefix node_modules/@needle-tools/gltf-build-pipeline"
+  },
+  "dependencies": {
+    "@needle-tools/engine": "^4.0.3-alpha",
+    "three": "npm:@needle-tools/three@^0.162.11"
   },
   "devDependencies": {
+    "@needle-tools/helper": "1.10.1",
     "@sveltejs/vite-plugin-svelte": "^5.0.2",
     "@tsconfig/svelte": "^5.0.4",
+    "@types/three": "0.162.0",
+    "@vitejs/plugin-basic-ssl": "^1.2.0",
+    "autoprefixer": "^10.4.20",
     "svelte": "^5.14.3",
     "svelte-check": "^4.1.1",
+    "tailwindcss": "^3.4.9",
     "tslib": "^2.8.1",
     "typescript": "~5.6.2",
-    "vite": "^6.0.3"
+    "vite": "^6.0.3",
+    "vite-plugin-compression": "^0.5.1"
   }
 }
